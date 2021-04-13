@@ -1,0 +1,26 @@
+{
+  "name": "ReadMeGenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^8.0.0",
+    "node": "^15.12.0",
+    "requirer": "^0.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamzsait/ReadMeGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamzsait/ReadMeGenerator/issues"
+  },
+  "homepage": "https://github.com/hamzsait/ReadMeGenerator#readme"
+}
