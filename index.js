@@ -30,15 +30,7 @@ const questions = [
   },
 ]
 
-inquirer.prompt(questions).then(answers => {
-   typeof(answers)
-   console.log(answers)
-   console.log(answers.description)
-   console.log(answers.installationInstructions)
-   console.log(answers.usageInformation)
-   console.log(answers.contributionsGuidelines)
-   console.log(answers.testIntructions)
-})
+
 
 // // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {
@@ -46,9 +38,17 @@ inquirer.prompt(questions).then(answers => {
 // }
 
 // // TODO: Create a function to initialize app
-// function init() {
 
-// }
+function init() {
+  inquirer.prompt(questions).then(answers => {
+    typeof(answers)
+    console.log(answers)
+    console.log(answers.description)
+    console.log(answers.installationInstructions)
+    console.log(answers.usageInformation)
+    console.log(answers.contributionsGuidelines)
+    console.log(answers.testIntructions)
+ })
+}
 
-// // Function call to initialize app
-// init();
+init();
