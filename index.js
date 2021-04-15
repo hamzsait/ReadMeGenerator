@@ -1,32 +1,38 @@
 // TODO: Include packages needed for this application
-var inquirer = require('inquirer')
+const inquirer = require('inquirer')
+const markdown = require('./markdown.js')
 
 // TODO: Create an array of questions for user input
 const questions = [
   {
     type: 'input',
+    name: 'title',
+    message: 'Enter a title for the repository:',
+  },
+  {
+    type: 'input',
     name: 'description',
-    message: 'Enter a description for the repository',
+    message: 'Enter a description for the repository:',
   },
   {
     type: 'input',
     name: 'installationInstructions',
-    message: 'Enter requirements',
+    message: 'Enter installation requirements:',
   },
   {
     type: 'input',
     name: 'usageInformation',
-    message: 'Enter requirements',
+    message: 'Enter usage information:',
   },
   {
     type: 'input',
     name: 'contributionsGuidelines',
-    message: 'Enter requirements',
+    message: 'Enter contribution guidelines:',
   },
   {
     type: 'input',
     name: 'testIntructions',
-    message: 'Enter requirements',
+    message: 'Enter test Instructions:',
   },
 ]
 
@@ -41,13 +47,7 @@ const questions = [
 
 function init() {
   inquirer.prompt(questions).then(answers => {
-    typeof(answers)
-    console.log(answers)
-    console.log(answers.description)
-    console.log(answers.installationInstructions)
-    console.log(answers.usageInformation)
-    console.log(answers.contributionsGuidelines)
-    console.log(answers.testIntructions)
+    markdown.generateMarkdown(answers)
  })
 }
 
