@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
     "ISC":"[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)",
     "MIT":"[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
     "Mozilla":"[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)",
-    "Perl":"[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0",
+    "Perl":"[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)",
   }
   output = ""
   for (const lic of license){
@@ -19,16 +19,6 @@ function renderLicenseBadge(license) {
   return output
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return(
   `# ${data.title}
@@ -39,19 +29,45 @@ function generateMarkdown(data) {
   ${data.description}
   
   ## Table of Contents
-  1. Installation
-  2. Usage
-  3. Lisence
-  4. Contributions
-  5. Tests
-  6. Questions
+  
+  [1. Installation](#1.-Installation-Requirements:)
 
-  ## Installation Requirements
+  [2. Usage](#2.-Usage:)
+
+  [3. Contribution Guidlines](#3.-Contribution-Guidelines:)
+
+  [4. Lisences](#4.-Lisences:)
+
+  [5. Tests](#5.-Tests:)
+
+  [6. Questions](#6.-Questions:)
+
+  ## 1. Installation Requirements:
   The following command will install the packages needed:
 
     ${data.installationInstructions}
   
-  
+  ## 2. Usage:
+  ${data.usageInformation}
+
+  ## 3. Contribution Guidelines:
+  ${data.contributionGuidelines}
+
+  ## 4. Lisences:
+
+  ${renderLicenseBadge(data.license)}
+
+  ## 5. Tests:
+  The following command can be run to run the testing suite.
+
+    ${data.testIntructions}
+
+  ## 6. Questions
+  Have any additonal questions? Feel free to contact me!
+
+  [My GitHub](https://github.com/${data.gitHub})
+
+  [My Email](mailto:${data.email})
   `)
 }
 

@@ -7,10 +7,26 @@ const fs = require("fs")
 const questions = [
   {
     type: 'input',
+    name: 'gitHub',
+    message: 'Enter GitHub username:',
+    validate: ((userData) => {
+      return userData.length < 1 ? console.log('Please enter a valid entry.') : true
+    })
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'Enter email',
+    validate: ((userData) => {
+      return userData.length < 1 ? console.log('Please enter a valid entry.') : true
+    })
+  },
+  {
+    type: 'input',
     name: 'title',
     message: 'Enter a title for the repository:',
     validate: ((userData) => {
-      return userData.length < 0 ? console.log('Please enter a valid entry.') : true
+      return userData.length < 1 ? console.log('Please enter a valid entry.') : true
     })
   },
   {
@@ -18,7 +34,7 @@ const questions = [
     name: 'description',
     message: 'Enter a description for the repository:',
     validate: ((userData) => {
-      return userData.length < 0 ? console.log('Please enter a valid entry.') : true
+      return userData.length < 1 ? console.log('Please enter a valid entry.') : true
     })
   },
   {
@@ -26,7 +42,7 @@ const questions = [
     name: 'installationInstructions',
     message: 'Enter installation requirements:',
     validate: ((userData) => {
-      return userData.length < 0 ? console.log('Please enter a valid entry.') : true
+      return userData.length < 1 ? console.log('Please enter a valid entry.') : true
     })
   },
   {
@@ -40,7 +56,7 @@ const questions = [
     name: 'usageInformation',
     message: 'Enter usage information:',
     validate: ((userData) => {
-      return userData.length < 0 ? console.log('Please enter a valid entry.') : true
+      return userData.length < 1 ? console.log('Please enter a valid entry.') : true
     })
   },
   {
@@ -48,27 +64,18 @@ const questions = [
     name: 'contributionGuidelines',
     message: 'Enter contribution guidelines:',
     validate: ((userData) => {
-      return userData.length < 0 ? console.log('Please enter a valid entry.') : true
+      return userData.length < 1 ? console.log('Please enter a valid entry.') : true
     })
   },
   {
     type: 'input',
     name: 'testIntructions',
-    message: 'Enter test Instructions:',
+    message: 'Enter test command:',
     validate: ((userData) => {
-      return userData.length < 0 ? console.log('Please enter a valid entry.') : true
+      return userData.length < 1 ? console.log('Please enter a valid entry.') : true
     })
   },
 ]
-
-
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-
-// }
-
-// // TODO: Create a function to initialize app
 
 function init() {
   inquirer.prompt(questions).then(answers => {
