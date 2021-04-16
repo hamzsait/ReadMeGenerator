@@ -29,14 +29,14 @@ function generateMarkdown(data) {
   ${data.description}
   
   ## Table of Contents
-  
+
   [1. Installation](#1.-Installation-Requirements:)
 
   [2. Usage](#2.-Usage:)
 
   [3. Contribution Guidlines](#3.-Contribution-Guidelines:)
 
-  [4. Lisences](#4.-Lisences:)
+  [4. Licences](#4.-Licences:)
 
   [5. Tests](#5.-Tests:)
 
@@ -53,7 +53,7 @@ function generateMarkdown(data) {
   ## 3. Contribution Guidelines:
   ${data.contributionGuidelines}
 
-  ## 4. Lisences:
+  ## 4. Licences:
 
   ${renderLicenseBadge(data.license)}
 
